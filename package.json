@@ -1,0 +1,16 @@
+{
+  "name": "p05-sprachkurs-buchen",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass:watch": "sass --watch $(pwd)/src/scss:$(pwd)/build/css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.77.2"
+  }
+}
