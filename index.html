@@ -3,9 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/build/css/style.css">
     <title>Document</title>
 </head>
 <body>
+<div id="contet">
+    <div id="allDropDown">
     
+        <div class="dropDown" id="selectLanguage">
+            <select class="dropDownItem" name="languages" id="languages">
+                <option class="selector" value="" selected disabled hidden>Languages</option>
+                <option value="english">English</option>
+                <option value="french">French</option>
+                <option value="italian">Italian</option>
+            </select>
+
+        </div>
+
+        <div class="dropDown" id="selectLevel">
+            <select class="dropDownItem" name="level" id="level">
+                <option class="selector" value="" selected disabled hidden>Level</option>
+                <option value="beginner">Beginner</option>
+                <option value="intermediate">Intermediate</option>
+                <option value="advanced">Advanced</option>
+            </select>
+        </div>
+
+        <div class="dropDown" id="selectDate">
+            <select class="dropDownItem" name="date" id="date">
+                <option class="selector" value="" selected disabled>Date</option>
+            </select>
+
+        </div>
+
+        <div class="dropDown" id="selectTime">
+            <select class="dropDownItem" name="time" id="time">
+                <option class="selector" value="" selected disabled>Time</option>
+            </select>
+
+        </div>
+    </div>
+</div>
+  <script src="/javascripts/dropDown.js"></script>  
 </body>
 </html>

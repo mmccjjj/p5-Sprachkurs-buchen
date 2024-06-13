@@ -5,12 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "sass:watch": "sass --watch $(pwd)/src/scss:$(pwd)/build/css"
+    "sass:watch": "cross-env node run-sass.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "cross-env": "^7.0.3",
     "sass": "^1.77.2"
   }
 }
