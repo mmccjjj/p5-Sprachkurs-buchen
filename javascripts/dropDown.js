@@ -3,6 +3,8 @@ document.addEventListener("DOMContentLoaded", function() {
   let level = document.getElementById("level");
   let date = document.getElementById("date");
   let time = document.getElementById("time");
+  let startButton = document.getElementById("startbutton");
+  let preventStorageClear = false;
 
   let optionsData = {
     "english": {
@@ -26,11 +28,10 @@ document.addEventListener("DOMContentLoaded", function() {
   languages.addEventListener("change", updateOptions);
   level.addEventListener("change", updateOptions);
 
-  // Button für Speichern und Navigieren
-  let startButton = document.getElementById("startbutton");
+
   startButton.addEventListener("click", function() {
+    preventStorageClear = true;
     startButtonFunction();
-    // Hier den Pfad zur nächsten Seite eintragen
     window.location.href = "inputForm1.html"; 
   });
 
@@ -130,4 +131,12 @@ document.addEventListener("DOMContentLoaded", function() {
       setPlaceholderForTime();
     }
   }
+  window.addEventListener("beforeunload", function(event) {
+    if (!preventStorageClear) {
+      localStorage.removeItem("Language");
+      localStorage.removeItem("Level");
+      localStorage.removeItem("Date");
+      localStorage.removeItem("Time");
+    }
+  });
 });
