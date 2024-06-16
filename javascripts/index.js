@@ -37,10 +37,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // Funktion zum Laden der Optionen basierend auf gespeicherten Daten
   function loadOptionsFromStorage() {
-    let storedLanguage = localStorage.getItem("Language");
-    let storedLevel = localStorage.getItem("Level");
-    let storedDate = localStorage.getItem("Date");
-    let storedTime = localStorage.getItem("Time");
+    let storedLanguage = localStorage.getItem("language");
+    let storedLevel = localStorage.getItem("level");
+    let storedDate = localStorage.getItem("date");
+    let storedTime = localStorage.getItem("time");
 
     // Setze die gespeicherten Werte in die Dropdowns
     if (storedLanguage && storedLevel && storedDate && storedTime &&
@@ -68,10 +68,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // Funktion zum Speichern der Daten im LocalStorage
   function startButtonFunction(){
-    localStorage.setItem("Language", languages.value);
-    localStorage.setItem("Level", level.value);
-    localStorage.setItem("Date", date.value);
-    localStorage.setItem("Time", time.value);
+    localStorage.setItem("language", languages.value);
+    localStorage.setItem("level", level.value);
+    localStorage.setItem("date", date.value);
+    localStorage.setItem("time", time.value);
   }
 
   // Funktion zum Aktualisieren der Dropdown-Optionen für Datum
@@ -133,10 +133,10 @@ document.addEventListener("DOMContentLoaded", function() {
   }
   window.addEventListener("beforeunload", function(event) {
     if (!preventStorageClear) {
-      localStorage.removeItem("Language");
-      localStorage.removeItem("Level");
-      localStorage.removeItem("Date");
-      localStorage.removeItem("Time");
+      localStorage.removeItem("language");
+      localStorage.removeItem("level");
+      localStorage.removeItem("date");
+      localStorage.removeItem("time");
     }
   });
 });
