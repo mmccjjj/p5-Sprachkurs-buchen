@@ -4,7 +4,7 @@
     gap: 0.5rem;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
+    width: fit-content;
 }
 
 
@@ -15,10 +15,10 @@
     border: solid;
     appearance: none;
     /* padding: 0 30px 0 15px; */
-    width: 38vh;
+    width: 30vw;
     color: #81D9F5;
     background-color: white;
-    font-size: 5vh;
+    font-size: 5vw;
     border-radius: 10px;
 }
 
@@ -26,6 +26,3 @@
     outline: none;
 }
 
-.dropDownItem:hover{
-    cursor: pointer;
-}

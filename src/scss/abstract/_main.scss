@@ -6,3 +6,33 @@
 html{
     min-height: 100vh;
 }
+
+#content{
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto 2vh auto;
+    grid-template-areas: 
+    ". allDropDown allDropDown allDropDown ."
+    ". . . . ."
+    ". startbutton startbutton startbutton .";
+
+}
+
+#startbutton{
+grid-area: startbutton;
+width: 25vw;
+height: fit-content;
+border-radius: 10px;
+border-style: none;
+background-color: #81D9F5;
+color: white;
+font-size: 8vw;
+justify-self: center;
+}
+
+#allDropDown{
+    grid-area: allDropDown;
+    justify-self: center;
+
+}
