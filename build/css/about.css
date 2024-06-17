@@ -121,4 +121,12 @@ main {
   grid-template-rows: auto 2vh auto;
 }
 
-/*# sourceMappingURL=style.css.map */
+main {
+  grid-template-areas: "about about about about about";
+}
+
+p {
+  grid-area: about;
+}
+
+/*# sourceMappingURL=about.css.map */

@@ -121,4 +121,25 @@ main {
   grid-template-rows: auto 2vh auto;
 }
 
-/*# sourceMappingURL=style.css.map */
+main {
+  grid-template-areas: ". allDropDown allDropDown allDropDown ." ". . . . ." ". startbutton startbutton startbutton .";
+}
+
+#startbutton {
+  grid-area: startbutton;
+  width: 25vw;
+  height: fit-content;
+  border-radius: 10px;
+  border-style: none;
+  background-color: #81D9F5;
+  color: white;
+  font-size: 8vw;
+  justify-self: center;
+}
+
+#allDropDown {
+  grid-area: allDropDown;
+  justify-self: center;
+}
+
+/*# sourceMappingURL=index.css.map */

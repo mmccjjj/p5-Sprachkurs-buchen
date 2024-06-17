@@ -1,0 +1,12 @@
+
+@use "style";
+@import"abstract/colors";
+
+main{
+    grid-template-areas:
+    "about about about about about";
+}
+
+p{
+    grid-area: about;
+}
