@@ -8,6 +8,8 @@ let inUsername= document.getElementById("username");
 let inPassword= document.getElementById("password");
 let inRePassword= document.getElementById("re-password");
 let nextButton= document.getElementById("nextButton");
+let modal = document.getElementById("myModal");
+let span = document.getElementsByClassName("close")[0];
 
 if (!language || !level || !date || !time){
 
@@ -101,9 +103,20 @@ document.addEventListener("DOMContentLoaded", function() {
         if (nextButtonFunction()) {
             window.location.href = "inputForm2.html"; 
         }else{
-                alert("At least one field was not filled out correctly.");
+            modal.style.display = "block";
         }
     });
+
+    span.onclick = function() {
+        modal.style.display = "none";
+      }
+
+      window.onclick = function(event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      }
+
     function nextButtonFunction() {
         let emailValid = validateEmail(inEmail.value);
         let pw1Value = inPassword.value;
@@ -145,7 +158,7 @@ document.addEventListener("DOMContentLoaded", function() {
             localStorage.setItem("username", inUsername.value);
             localStorage.setItem("email", inEmail.value);
         } else {
-            alert("At least one field was not filled out correctly.");
+            modal.style.display = "block";
         }
         return emailValid && (pw1Value === pw2Value) && (pw1Value.length >= 6 && pw2Value.length >= 6) && (usernameValid && usernameValid.length >= 3);
     }
