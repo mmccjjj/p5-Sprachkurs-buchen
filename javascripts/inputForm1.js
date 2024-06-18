@@ -118,7 +118,7 @@ document.addEventListener("DOMContentLoaded", function() {
       }
 
     function nextButtonFunction() {
-        let emailValid = validateEmail(inEmail.value);
+        const emailValid = validateEmail(inEmail.value);
         let pw1Value = inPassword.value;
         let pw2Value = inRePassword.value;
         let usernameValid= inUsername.value;

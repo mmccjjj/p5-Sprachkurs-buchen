@@ -155,4 +155,8 @@ input {
   border-radius: 5px;
 }
 
+.wrong {
+  border: 1px solid red;
+}
+
 /*# sourceMappingURL=inputForm2.css.map */
