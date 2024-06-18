@@ -23,7 +23,7 @@ let adressInput= document.getElementById("adress");
 let nameInput= document.getElementById("name");
 let nextButton= document.getElementById("nextButton");
 
-function checkname(){
+function checkName(){
     const nameValue= nameInput.value
     const regex= /^[A-Za-zÄäÖöÜüß\-]+(?:\s[A-Za-zÄäÖöÜüß\-]+)+$/;
 
@@ -36,9 +36,9 @@ function checkname(){
     }
 }
 
-nameInput.addEventListener("input", checkname)
+nameInput.addEventListener("input", checkName)
 
-function checkadress(){
+function checkAdress(){
     const adressValue= adressInput.value
     const regex= /^[A-Za-zÄäÖöÜüß]+\s?([A-Za-zÄäÖöÜüß]+\s)?\d+$/;
     
@@ -51,9 +51,9 @@ function checkadress(){
     }
 }
 
-adressInput.addEventListener("input", checkadress);
+adressInput.addEventListener("input", checkAdress);
 
-function checkzip(){
+function checkZip(){
 const zipValue= zipInput.value;                                                                                          
     if (zipValue.length === 5){
         zipInput.classList.remove("wrong");
@@ -64,9 +64,9 @@ const zipValue= zipInput.value;
     }
 }
 
-zipInput.addEventListener("input", checkzip);
+zipInput.addEventListener("input", checkZip);
 
-function checkcity(){
+function checkCity(){
      cityValue= cityInput.value.toLowerCase();
 
     if (americanCities.some(city => city.toLowerCase() === cityValue)) {
@@ -78,14 +78,14 @@ function checkcity(){
     }
 }
 
-cityInput.addEventListener("input", checkcity);
+cityInput.addEventListener("input", checkCity);
 
 
 function nextButtonFunction() {
-    const cityValid = checkcity();
-    const zipValid= checkzip();
-    const adressValid= checkadress();
-    const nameValid= checkname();
+    const cityValid = checkCity();
+    const zipValid= checkZip();
+    const adressValid= checkAdress();
+    const nameValid= checkName();
 
     if (cityValid&& zipValid&& adressValid&& nameValid){
         localStorage.setItem("city", cityInput.value)

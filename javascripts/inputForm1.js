@@ -1,4 +1,3 @@
-let text= document.getElementById("test");
 let language= localStorage.getItem("language");
 let level= localStorage.getItem("level");
 let date= localStorage.getItem("date");
@@ -22,36 +21,6 @@ else {
     text.innerText= `You would like to book the ${level} ${language} course on the ${date} at ${time}` 
 }
 
-const password1= document.getElementById("password");
-const password2= document.getElementById("re-password")
-
-
-
-password1.addEventListener("input", validatePassword);
-password2.addEventListener("input", validatePassword);
-
-function validatePassword() {
-    let pw1Value = password1.value;
-    let pw2Value = password2.value;
-
-    if (pw1Value.length >= 6 && pw2Value.length >= 6){
-            // Überprüfung auf Gleichheit der Passwörter
-            if (pw1Value === pw2Value) {
-                password1.classList.remove("wrong");
-                password2.classList.remove("wrong");
-            } else {
-                password1.classList.add("wrong");
-                password2.classList.add("wrong");
-               }
-
-            }else {
-                // Markierung hinzufügen, wenn Passwort zu kurz ist
-                inPassword.classList.add("wrong");
-                inRePassword.classList.add("wrong");
-            }
-        }
-
-
 
 function toggleElements() {
     var elements = document.getElementsByClassName("hide");
@@ -59,6 +28,40 @@ function toggleElements() {
         elements[i].classList.toggle("hideActiv");
     }
 }
+
+function checkEmail() {
+    const emailValue= inEmail.value
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (regex.test(emailValue)){
+        inEmail
+    }
+}
+
+function checkPassword() {
+    let pw1Value = inPassword.value;
+    let pw2Value = inRePassword.value;
+
+    if (pw1Value.length >= 6 && pw2Value.length >= 6){
+            // Überprüfung auf Gleichheit der Passwörter
+            if (pw1Value === pw2Value) {
+                password1.classList.remove("wrong");
+                password2.classList.remove("wrong");
+                return true;
+            } else {
+                password1.classList.add("wrong");
+                password2.classList.add("wrong");
+                return false;
+               }
+
+    }else {
+        inPassword.classList.add("wrong");
+        inRePassword.classList.add("wrong");
+        return false;
+        }
+}
+
+inPassword.addEventListener("input", checkPassword);
+inRePassword.addEventListener("input", checkPassword);
 
 
 function goBack() {
