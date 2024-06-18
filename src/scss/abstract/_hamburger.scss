@@ -21,9 +21,10 @@ nav{
         border-radius: 25PX;
         position: absolute;
         top: 50%;
-        left: 50%;
+        right:20%;
         transform: translate(-50%, -50%);
         transition: .3s ease;
+        
     }
 
     span:nth-child(1){
@@ -63,7 +64,7 @@ nav{
     max-width: 80vw;
     position: fixed;
     top: 0;
-    right: -450px;
+    right: -1500px;
     display: flex;
     flex-direction: column;
     justify-content: center;

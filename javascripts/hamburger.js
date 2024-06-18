@@ -7,3 +7,11 @@ hamMenu.addEventListener("click", () =>{
     hamMenuOff.classList.toggle("active");
 
 })
+
+document.addEventListener("click", function(event) {
+    const isClickInsideMenu = hamMenu.contains(event.target) || hamMenuOff.contains(event.target);
+    if (!isClickInsideMenu) {
+        hamMenu.classList.remove("active");
+        hamMenuOff.classList.remove("active");
+    }
+});

@@ -1,2 +1,19 @@
 @use "style";
 @import"abstract/colors";
+
+main{
+    height: 100vh;
+    grid-template-areas: 
+    "text text text text text"
+    "text text text text text";
+}
+
+p{
+    grid-area: text;
+}
+
+input{
+    border-style: none;
+    background-color: $inputcolor;
+    border-radius: 5px;
+}

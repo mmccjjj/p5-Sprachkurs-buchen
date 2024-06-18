@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/build/css/style.css">
+    <link rel="stylesheet" href="/build/css/inputForm1.css">
     <title>inputForm1</title>
 </head>
 <body>
@@ -30,9 +30,44 @@
         </header>
     
         <main>
-            <p id="test">
+            <p id="test"></p>
+            <div id="inForm1">
+            <form onsubmit="return validatePasswords()">
+                <div class="hide">
+                <label for="username">Username</label> <br>
+                <input type="text" name="username" id="username" required>
+                </div>
+                <div class="hide">
+                <label for="email">E- Mail</label> <br>
+                <input type="email" name="email" id="email" class="emailC" required>
+                </div class="hide">
+                <div class="hide">
+                <label for="password">Password</label> <br>
+                <input type="password" name="password" id="password" class="pw" required >
+                </div>
+                <div class="hide">
+                <label for="re-password">Re- password</label> <br>
+                <input type="password" name="re-password" id="re-password" class="pw" required>
+                </div>
+                <div id="buttons">
+                <button type="button" class="buNeg" onclick="goBack()">Back</button>
+                <button type="button" class="buPos hide" id="nextButton">Next</button>
+                </div>
+            </form>
 
-            </p>
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                  <span class="close">&times;</span>
+                  <p>You have not filled out at least one field correctly. Please note the following points:</p>
+                  <br>
+                  <ul>
+                    <li>Username must be at least three characters long.</li>
+                    <li>Valid email address required.</li>
+                    <li>Password must be at least six characters long.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
         
         </main>
     
