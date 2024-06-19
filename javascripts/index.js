@@ -23,16 +23,45 @@ document.addEventListener("DOMContentLoaded", function() {
   "advanced": { date: ["2024-08-02","2024-08-09","2024-08-16"], time: ["07:00", "13:00","19:00"] },
   },
   };
+
+  function updateTimeDropdown(selectedLanguage, selectedLevel, selectedTime) {
+    time.innerHTML = "";
+    time.add(new Option("Time", "", true, true));
+    time.options[0].disabled = true;
+    
   
-  // Eventlistener für Änderungen in den Dropdowns
+    optionsData[selectedLanguage][selectedLevel].time.forEach(function(option) {
+      time.add(new Option(option, option));
+    });
+    
+    if (selectedTime) {
+      time.value = selectedTime;
+    }
+    }
+
+  function updateOptions() {
+    let selectedValueLanguages = languages.value;
+    let selectedValueLevel = level.value;
+    
+  
+    if (optionsData[selectedValueLanguages] && optionsData[selectedValueLanguages][selectedValueLevel]) {
+      updateDateDropdown(selectedValueLanguages, selectedValueLevel);
+      updateTimeDropdown(selectedValueLanguages, selectedValueLevel);
+    }
+    }
+    window.addEventListener("beforeunload", function(event) {
+    if (!preventStorageClear) {
+    localStorage.clear();
+   
+    }
+    });
+
+  
+  
   languages.addEventListener("change", updateOptions);
   level.addEventListener("change", updateOptions);
   
-  startButton.addEventListener("click", function() {
-  preventStorageClear = true;
-  startButtonFunction();
-  window.location.href = "inputForm1.html";
-  });
+
   
   // Funktion zum Laden der Optionen basierend auf gespeicherten Daten
   function loadOptionsFromStorage() {
@@ -56,10 +85,6 @@ document.addEventListener("DOMContentLoaded", function() {
   
     // Zeit-Optionen aktualisieren
     updateTimeDropdown(storedLanguage, storedLevel, storedTime);
-  } else {
-    // Wenn LocalStorage leer ist, setze die Placeholder
-    setPlaceholderForDate();
-    setPlaceholderForTime();
   }
   }
   
@@ -73,6 +98,12 @@ document.addEventListener("DOMContentLoaded", function() {
   localStorage.setItem("date", date.value);
   localStorage.setItem("time", time.value);
   }
+
+  startButton.addEventListener("click", function() {
+    preventStorageClear = true;
+    startButtonFunction();
+    window.location.href = "inputForm1.html";
+    });
   
   // Funktion zum Aktualisieren der Dropdown-Optionen für Datum
   function updateDateDropdown(selectedLanguage, selectedLevel, selectedDate) {
@@ -91,55 +122,5 @@ document.addEventListener("DOMContentLoaded", function() {
   }
   
   // Funktion zum Aktualisieren der Dropdown-Optionen für Zeit
-  function updateTimeDropdown(selectedLanguage, selectedLevel, selectedTime) {
-  time.innerHTML = "";
-  time.add(new Option("Time", "", true, true));
-  time.options[0].disabled = true;
-  
 
-  optionsData[selectedLanguage][selectedLevel].time.forEach(function(option) {
-    time.add(new Option(option, option));
-  });
-  
-  if (selectedTime) {
-    time.value = selectedTime;
-  }
-  }
-  
-  // Funktion zum Setzen des Placeholders für Datum
-  function setPlaceholderForDate() {
-  date.innerHTML = "";
-  date.add(new Option("Date", "", true, true));
-  date.options[0].disabled = true;
-  }
-  
-  // Funktion zum Setzen des Placeholders für Zeit
-  function setPlaceholderForTime() {
-  time.innerHTML = "";
-  time.add(new Option("Time", "", true, true));
-  time.options[0].disabled = true;
-  }
-  
-  // Funktion zum Aktualisieren der Dropdowns basierend auf Sprache und Level
-  function updateOptions() {
-  let selectedValueLanguages = languages.value;
-  let selectedValueLevel = level.value;
-  
-
-  if (optionsData[selectedValueLanguages] && optionsData[selectedValueLanguages][selectedValueLevel]) {
-    updateDateDropdown(selectedValueLanguages, selectedValueLevel);
-    updateTimeDropdown(selectedValueLanguages, selectedValueLevel);
-  } else {
-    setPlaceholderForDate();
-    setPlaceholderForTime();
-  }
-  }
-  window.addEventListener("beforeunload", function(event) {
-  if (!preventStorageClear) {
-  localStorage.removeItem("language");
-  localStorage.removeItem("level");
-  localStorage.removeItem("date");
-  localStorage.removeItem("time");
-  }
-  });
   });

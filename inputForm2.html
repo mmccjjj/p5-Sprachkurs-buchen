@@ -46,11 +46,24 @@
                 <label for="city">City</label>
                 <input type="text" name="city" id="city"required>
 
-                <button type="button" class="buNeg">Back</button>
-                <button type="button" class="buPos">Next</button>
+                <button type="button" class="buNeg" id="backButton">Back</button>
+                <button type="button" class="buPos" id="nextButton">Next</button>
 
 
             </form>
+
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                  <span class="close">&times;</span>
+                  <p>You have not filled out at least one field correctly. Please note the following points:</p>
+                  <br>
+                  <ul>
+                    <li>Username must be at least three characters long.</li>
+                    <li>Valid email address required.</li>
+                    <li>Password must be at least six characters long.</li>
+                  </ul>
+                </div>
+            </div>
         
         </main>
     
@@ -62,7 +75,7 @@
     </div>
 
 </div>
-<!--     <script src="/javascripts/index.js"></script> -->
+
     <script src="/javascripts/hamburger.js"></script>     
     <script src="/javascripts/inputForm2.js"></script>
 </body>

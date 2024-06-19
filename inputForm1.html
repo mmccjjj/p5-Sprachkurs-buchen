@@ -30,9 +30,9 @@
         </header>
     
         <main>
-            <p id="test"></p>
+            <p id="text"></p>
             <div id="inForm1">
-            <form onsubmit="return validatePasswords()">
+            <form>
                 <div class="hide">
                 <label for="username">Username</label> <br>
                 <input type="text" name="username" id="username" required>
@@ -50,7 +50,7 @@
                 <input type="password" name="re-password" id="re-password" class="pw" required>
                 </div>
                 <div id="buttons">
-                <button type="button" class="buNeg" onclick="goBack()">Back</button>
+                <button type="button" class="buNeg" id="backButton">Back</button>
                 <button type="button" class="buPos hide" id="nextButton">Next</button>
                 </div>
             </form>
@@ -66,7 +66,7 @@
                     <li>Password must be at least six characters long.</li>
                   </ul>
                 </div>
-              </div>
+            </div>
             </div>
         
         </main>
@@ -79,7 +79,7 @@
     </div>
 
 </div>
-<!--     <script src="/javascripts/index.js"></script> -->
+
     <script src="/javascripts/hamburger.js"></script>     
     <script src="/javascripts/inputForm1.js"></script>
 </body>
