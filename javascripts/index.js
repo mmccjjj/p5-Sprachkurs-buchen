@@ -24,6 +24,21 @@ document.addEventListener("DOMContentLoaded", function() {
   },
   };
 
+  function capitalizeWordsInLocalStorage(keys) {
+    keys.forEach(key => {
+        let value = localStorage.getItem(key); // Wert aus localStorage holen
+        if (value) {
+            // Wörter im Wert umformatieren (jedes Wort beginnt mit einem Großbuchstaben)
+            let formattedValue = value.split(' ').map(word => {
+                return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+            }).join(' ');
+
+            // Formatierter Wert zurück in localStorage speichern
+            localStorage.setItem(key, formattedValue);
+        }
+    });
+}
+
   function updateTimeDropdown(selectedLanguage, selectedLevel, selectedTime) {
     time.innerHTML = "";
     time.add(new Option("Time", "", true, true));
@@ -97,6 +112,8 @@ document.addEventListener("DOMContentLoaded", function() {
   localStorage.setItem("level", level.value);
   localStorage.setItem("date", date.value);
   localStorage.setItem("time", time.value);
+  let keysToUpdate = ["language", "level"];
+  capitalizeWordsInLocalStorage(keysToUpdate);
   }
 
   startButton.addEventListener("click", function() {
@@ -121,6 +138,6 @@ document.addEventListener("DOMContentLoaded", function() {
   }
   }
   
-  // Funktion zum Aktualisieren der Dropdown-Optionen für Zeit
-
   });
+
+  

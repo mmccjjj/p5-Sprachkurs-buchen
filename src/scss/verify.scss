@@ -1,3 +1,37 @@
 @use "style";
 @import"abstract/colors";
 
+main{
+    padding: 2vh;
+    height: 100vw;
+    grid-template-rows: auto auto auto auto auto;
+    grid-template-areas: 
+    "text text text text text"
+    "text text text text text"
+    "text text text text text"
+    "text text text text text"
+    "text text text text text"
+
+}
+
+#text{
+    grid-area: text;
+}
+
+
+#title{
+    font-size: 4vw;
+}
+
+
+#courseOutput{
+    font-size: 10vw;
+}
+
+#dateOutput{
+    font-size: 3vw;
+}
+
+.textForm{
+    font-size: 5vw;
+}

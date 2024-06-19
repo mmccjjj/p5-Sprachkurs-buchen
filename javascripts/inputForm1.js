@@ -28,6 +28,21 @@ window.onload = function() {
     }
 };
 
+function capitalizeWordsInLocalStorage(keys) {
+    keys.forEach(key => {
+        let value = localStorage.getItem(key); // Wert aus localStorage holen
+        if (value) {
+            // Wörter im Wert umformatieren (jedes Wort beginnt mit einem Großbuchstaben)
+            let formattedValue = value.split(' ').map(word => {
+                return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+            }).join(' ');
+
+            // Formatierter Wert zurück in localStorage speichern
+            localStorage.setItem(key, formattedValue);
+        }
+    });
+}
+
 
 if (!language || !level || !date || !time){
 
@@ -37,7 +52,7 @@ if (!language || !level || !date || !time){
 
 else {  
     
-    text.innerText= `You would like to book the ${level} ${language} course on the ${date} at ${time}` 
+    textDisplay.innerText= `You would like to book the ${level} ${language} course on the ${date} at ${time}` 
 }
 
 

@@ -44,6 +44,21 @@ window.onload = function() {
     }
 };
 
+function capitalizeWordsInLocalStorage(keys) {
+    keys.forEach(key => {
+        let value = localStorage.getItem(key); // Wert aus localStorage holen
+        if (value) {
+            // Wörter im Wert umformatieren (jedes Wort beginnt mit einem Großbuchstaben)
+            let formattedValue = value.split(' ').map(word => {
+                return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+            }).join(' ');
+
+            // Formatierter Wert zurück in localStorage speichern
+            localStorage.setItem(key, formattedValue);
+        }
+    });
+}
+
 function checkName(){
     const nameValue= nameInput.value
     const regex= /^[A-Za-zÄäÖöÜüß\-]+(?:\s[A-Za-zÄäÖöÜüß\-]+)+$/;
@@ -109,10 +124,12 @@ function nextButtonFunction() {
     const nameValid= checkName();
 
     if (cityValid&& zipValid&& adressValid&& nameValid){
-        localStorage.setItem("city", cityInput.value)
-        localStorage.setItem("zip", zipInput.value)
-        localStorage.setItem("adress", adressInput.value)
-        localStorage.setItem("name", nameInput.value)
+        localStorage.setItem("city", cityInput.value);
+        localStorage.setItem("zip", zipInput.value);
+        localStorage.setItem("adress", adressInput.value);
+        localStorage.setItem("name", nameInput.value);
+        let keysToUpdate = ["city", "adress", "name"];
+        capitalizeWordsInLocalStorage(keysToUpdate);
         window.location.href = "verify.html";
     }else{
         modal.style.display = "block";

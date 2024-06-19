@@ -124,7 +124,7 @@ main {
 button {
   border-style: solid;
   border-radius: 10px;
-  padding: 1vh;
+  padding: 1vw;
   width: 20vw;
 }
 
@@ -138,6 +138,14 @@ button {
   border-color: #81D9F5;
   color: #81D9F5;
   background-color: white;
+}
+
+.hideActiv {
+  display: none;
+}
+
+.wrong {
+  border: 1px solid red;
 }
 
 /* Chrome, Safari, Edge, Opera */
