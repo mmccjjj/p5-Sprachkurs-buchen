@@ -12,6 +12,7 @@ let backButton= document.getElementById("backButton")
 let modal = document.getElementById("myModal");
 let span = document.getElementsByClassName("close")[0];
 
+
 if (!language || !level || !date || !time){
 
     textDisplay.innerText= "Please go back and select a course with a specific time and date.";

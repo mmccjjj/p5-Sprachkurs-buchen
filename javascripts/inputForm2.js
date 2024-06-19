@@ -22,6 +22,9 @@ let zipInput= document.getElementById("zip");
 let adressInput= document.getElementById("adress");
 let nameInput= document.getElementById("name");
 let nextButton= document.getElementById("nextButton");
+let backButton= document.getElementById("backButton");
+let modal = document.getElementById("myModal");
+let span = document.getElementsByClassName("close")[0];
 
 function checkName(){
     const nameValue= nameInput.value
@@ -92,12 +95,35 @@ function nextButtonFunction() {
         localStorage.setItem("zip", zipInput.value)
         localStorage.setItem("adress", adressInput.value)
         localStorage.setItem("name", nameInput.value)
+        window.location.href = "verify.html";
     }else{
-        alert("falsche eingabe")
+        modal.style.display = "block";
     }
 
 }
 
+span.onclick = function() {
+    modal.style.display = "none";
+}
+    
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+nextButton.addEventListener("click", function(event){
+     nextButtonFunction()   
+});
+
 nextButton.addEventListener("click", function(event){
     nextButtonFunction()
+});
+
+function backButtonFunction() {
+    window.history.back();
+}
+
+backButton.addEventListener("click", function(event){
+    backButtonFunction()
 });
