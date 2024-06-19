@@ -1,5 +1,7 @@
-let confirmButton= getElementById("confirmButton");
-let cancelButton= getElementById("cancelButton");
+let confirmButton= document.getElementById("confirmButton");
+let cancelButton= document.getElementById("cancelButton");
+let thx= document.getElementById("thx");
+let text= document.getElementById("text");
 let courseOutput= document.getElementById("courseOutput");
 let dateOutput= document.getElementById("dateOutput");
 let usernameOutput= document.getElementById("usernameOutput");
@@ -19,31 +21,45 @@ let adress= localStorage.getItem("adress");
 let zip= localStorage.getItem("zip");
 let city= localStorage.getItem("city");
 
+
 window.onload = function() {
 
-    courseOutput.innerText= `${language}, ${level}`;
-    dateOutput.innerText= `${date} ${time}`;
-    usernameOutput.innerText= `${username}`;
-    emailOutput.innerText= `${email}`;
-    nameOutput.innerText= `${name}`;
-    adressOutput.innerText= `${adress}`;
-    zipOutput.innerText= `${zip}`;
-    cityOutput.innerText= `${city}`;
+    if (!language&& !level&& !date&& !time&& !username&& !email&& !name&& !adress&& !zip&& !city){
+
+            thx.classList.remove("hideActiv");
+            text.classList.add("hideActiv");
+            confirmButton.classList.add("hideActiv");
+            cancelButton.classList.add("hideActiv");
+
+        }else{
+            thx.classList.add("hideActiv");
+            text.classList.remove("hideActiv");
+            courseOutput.innerText= `${language}, ${level}`;
+            dateOutput.innerText= `${date} ${time}`;
+            usernameOutput.innerText= `${username}`;
+            emailOutput.innerText= `${email}`;
+            nameOutput.innerText= `${name}`;
+            adressOutput.innerText= `${adress}`;
+            zipOutput.innerText= `${zip}`;
+            cityOutput.innerText= `${city}`;
+        }
 
 }
 
-function confirmButton(){
-    localStorage.clear
+function confirmButtonFunction(){
+    localStorage.clear()
+    location.reload()
 }
 
-function cancelButton(){
+function cancelButtonFunction(){
+    localStorage.clear()
     window.location.href = "index.html";
 }
 
 confirmButton.addEventListener("click", function(event){
-    confirmButton()
+    confirmButtonFunction()
 });
 
 cancelButton.addEventListener("click", function(event){
-    cancelButton()
+    cancelButtonFunction()
 });

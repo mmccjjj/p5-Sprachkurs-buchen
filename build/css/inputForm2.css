@@ -140,6 +140,14 @@ button {
   background-color: white;
 }
 
+.hideActiv {
+  display: none;
+}
+
+.wrong {
+  border: 1px solid red;
+}
+
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -210,10 +218,6 @@ input {
   border-style: none;
   background-color: #D9D9D9;
   border-radius: 5px;
-}
-
-.wrong {
-  border: 1px solid red;
 }
 
 /*# sourceMappingURL=inputForm2.css.map */
