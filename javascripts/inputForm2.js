@@ -26,6 +26,24 @@ let backButton= document.getElementById("backButton");
 let modal = document.getElementById("myModal");
 let span = document.getElementsByClassName("close")[0];
 
+window.onload = function() {
+
+    const fields = {
+        "name": "name",
+        "adress": "adress",
+        "zip": "zip",
+        "city": "city"
+    };
+
+    // Schleife durch jedes Schlüsselwort
+    for (let key in fields) {
+        const value = localStorage.getItem(key);
+        if (value) {  // Überprüfen, ob ein Wert vorhanden ist
+            document.getElementById(fields[key]).value = value;
+        }
+    }
+};
+
 function checkName(){
     const nameValue= nameInput.value
     const regex= /^[A-Za-zÄäÖöÜüß\-]+(?:\s[A-Za-zÄäÖöÜüß\-]+)+$/;
