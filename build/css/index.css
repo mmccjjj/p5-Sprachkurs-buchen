@@ -124,7 +124,7 @@ main {
 button {
   border-style: solid;
   border-radius: 10px;
-  padding: 1vh;
+  padding: 1vw;
   width: 20vw;
 }
 
@@ -205,10 +205,6 @@ main {
   grid-area: startbutton;
   width: 25vw;
   height: fit-content;
-  border-radius: 10px;
-  border-style: none;
-  background-color: #81D9F5;
-  color: white;
   font-size: 8vw;
   justify-self: center;
 }
