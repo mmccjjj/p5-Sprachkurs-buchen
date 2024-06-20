@@ -2,22 +2,30 @@
 @import"abstract/colors";
 
 main{
-    padding: 2vh;
-    height: 100vw;
-    grid-template-rows: auto auto auto auto auto;
     grid-template-areas: 
+    ". . . . ."
+    ". . . . ."
     "text text text text text"
     "text text text text text"
-    "text text text text text"
-    "text text text text text"
-    "text text text text text"
+    ". buttons buttons buttons .";
 
 }
 
 #text{
     grid-area: text;
+    margin-top: 5vw;
+    margin-left: 5vw;
 }
 
+#thx{
+    grid-area: text;
+    margin-top: 5vw;
+    margin-left: 5vw;
+}
+
+#buttons{
+    grid-area: buttons;
+}
 
 #title{
     font-size: 4vw;
@@ -26,6 +34,7 @@ main{
 
 #courseOutput{
     font-size: 10vw;
+    font-weight: bold;
 }
 
 #dateOutput{

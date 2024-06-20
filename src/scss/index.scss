@@ -28,11 +28,9 @@ justify-self: center;
 #title{
     max-width: 70vw;
     margin: 10vw;
-    margin-left: 20vw;
+    margin-left: 15vw;
     margin-bottom: 5vw;
     grid-area: title;
-    font-family: mainFont;
-    font-size: 20px;
         #span1{
             font-size: 50px;
             font-weight: bold;
@@ -55,9 +53,7 @@ justify-self: center;
     margin: 10vw;
     margin-left: 20vw;
     margin-top: 5vw;
-    font-size: 20px;
     grid-area: text;
-    font-family: mainFont;
 }
 
 #startbutton{

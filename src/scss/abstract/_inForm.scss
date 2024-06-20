@@ -1,0 +1,38 @@
+@import "colors";
+
+.form{
+    height: 6vw;
+    width: 60vw;
+    margin-bottom: 5vw;
+    font-size: 5vw;
+    padding: 1.5vw;
+}
+
+button{
+    height: 10vw;
+    width: 30vw;
+}
+
+
+#buttons{
+    display: flex;
+    justify-content: center;
+    gap: 2vw;
+    margin-top: 5vw;
+
+}
+
+input{
+    border-style: none;
+    background-color: $inputcolor;
+    border-radius: 5px;
+}
+
+.wrong {
+    border: 3px solid red;
+}
+
+.text{
+    grid-area: text;
+    margin: 10vw;
+}

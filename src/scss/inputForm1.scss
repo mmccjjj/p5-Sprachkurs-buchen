@@ -2,10 +2,11 @@
 @import"abstract/colors";
 
 main{
-    height: 100vh;
-    grid-template-rows: auto auto auto auto auto;
     grid-template-areas: 
     "text text text text text"
+    "inputform inputform inputform inputform inputform"
+    "inputform inputform inputform inputform inputform"
+    "inputform inputform inputform inputform inputform"
     "inputform inputform inputform inputform inputform";
 
 
@@ -15,12 +16,6 @@ p{
     grid-area: text;
 }
 
-input{
-    border-style: none;
-    background-color: $inputcolor;
-    border-radius: 5px;
-}
-
 
 #inForm1{
     grid-area: inputform;
@@ -28,9 +23,7 @@ input{
 }
 
 #buttons{
-    display: flex;
-    justify-content: center;
-
+    margin-bottom: 7vw;
 }
 
 

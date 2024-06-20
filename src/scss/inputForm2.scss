@@ -2,18 +2,17 @@
 @import"abstract/colors";
 
 main{
-    height: 100vh;
     grid-template-areas: 
-    "text text text text text"
-    "text text text text text";
+    ". . . . ."
+    ". . . . ."
+    "inputform inputform inputform inputform inputform"
+    "inputform inputform inputform inputform inputform"
+    "inputform inputform inputform inputform inputform";
 }
 
-p{
-    grid-area: text;
-}
 
-input{
-    border-style: none;
-    background-color: $inputcolor;
-    border-radius: 5px;
+
+#inForm2{
+    grid-area: inputform;
+    justify-self: center;
 }
