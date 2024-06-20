@@ -24,6 +24,12 @@
   outline: none;
 }
 
+img {
+  max-width: 100px;
+  height: auto;
+  color: white;
+}
+
 header {
   display: grid;
 }
@@ -115,6 +121,7 @@ html {
 }
 
 main {
+  min-height: 70vh;
   display: grid;
   justify-content: center;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -203,6 +210,24 @@ input[type=number] {
   color: white;
   text-decoration: none;
   cursor: pointer;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  background-color: #81D9F5;
+  color: white;
+  min-height: 20vh;
+  justify-content: space-around;
+  align-items: center;
+}
+footer #adress {
+  position: relative;
+  top: 1vh;
+}
+footer img {
+  max-width: 45px;
+  max-height: auto;
 }
 
 main {

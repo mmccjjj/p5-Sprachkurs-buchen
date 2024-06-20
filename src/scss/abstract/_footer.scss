@@ -1,0 +1,21 @@
+@import "colors";
+
+footer{
+    display: flex;
+    flex-direction: column;
+    background-color: $mainColor;
+    color: $textColor;
+    min-height: 20vh;
+    justify-content: space-around;
+    align-items: center;
+
+        #adress{
+            position: relative;
+            top: 1vh;
+        }
+
+        img{
+            max-width: 45px;
+            max-height: auto;
+        }
+}   

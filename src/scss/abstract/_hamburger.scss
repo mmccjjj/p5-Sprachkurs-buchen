@@ -1,5 +1,11 @@
 @import "colors";
 
+img{
+    max-width: 100px;
+    height: auto;
+    color: $textColor;
+}
+
 header{display: grid;}
 
 nav{
