@@ -20,3 +20,20 @@ footer{
             max-height: auto;
         }
 }   
+
+
+@media screen and (min-width: 1024px){
+    footer{
+        flex-direction: row-reverse;
+
+        #adress{
+            font-size: 1.5vw;
+        }
+        img{
+            max-width: 80px;
+            max-height: auto;
+        }
+}   
+    }
+ 
+

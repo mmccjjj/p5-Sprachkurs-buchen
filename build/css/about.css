@@ -1,3 +1,4 @@
+@charset "UTF-8";
 #allDropDown {
   display: flex;
   flex-direction: column;
@@ -25,6 +26,9 @@
   outline: none;
 }
 
+/* #navDesk{
+    display: none;
+} */
 img {
   max-width: 100px;
   height: auto;
@@ -33,6 +37,10 @@ img {
 
 header {
   display: grid;
+}
+
+#navDesk {
+  display: none;
 }
 
 nav {
@@ -108,6 +116,36 @@ nav {
   right: 0;
 }
 
+@media screen and (min-width: 1024px) {
+  .hamburgerOff {
+    display: none;
+  }
+  .hamburgerMenu span {
+    display: none;
+  }
+  nav {
+    display: flex;
+    height: 10vh;
+  }
+  nav #navDesk {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 3vw;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  nav #navDesk a {
+    text-decoration: none;
+    color: white;
+  }
+  nav #navDesk a:hover {
+    cursor: pointer; /* Ändert den Cursor in einen Finger bei Hover */
+  }
+  nav img {
+    max-width: 150px;
+  }
+}
 * {
   padding: 0px;
   margin: 0px;
@@ -236,6 +274,18 @@ footer img {
   max-height: auto;
 }
 
+@media screen and (min-width: 1024px) {
+  footer {
+    flex-direction: row-reverse;
+  }
+  footer #adress {
+    font-size: 1.5vw;
+  }
+  footer img {
+    max-width: 80px;
+    max-height: auto;
+  }
+}
 @font-face {
   font-family: "mainFont";
   src: url(/fonts/JosefinSlab-VariableFont_wght.ttf) format("woff2");
