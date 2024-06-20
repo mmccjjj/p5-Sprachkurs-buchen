@@ -2,7 +2,9 @@
 @import"abstract/colors";
 
 main{
-    grid-template-areas: 
+    grid-template-areas:
+    "title title title title title"
+    "text text text text text" 
     ". allDropDown allDropDown allDropDown ."
     ". . . . ."
     ". startbutton startbutton startbutton .";
@@ -21,4 +23,43 @@ justify-self: center;
     grid-area: allDropDown;
     justify-self: center;
 
+}
+
+#title{
+    max-width: 70vw;
+    margin: 10vw;
+    margin-left: 20vw;
+    margin-bottom: 5vw;
+    grid-area: title;
+    font-family: mainFont;
+    font-size: 20px;
+        #span1{
+            font-size: 50px;
+            font-weight: bold;
+        }
+
+        #span2{
+            font-size: 35px;
+            font-weight: bold;
+        }
+
+        #span3{
+            font-size: 40px;
+            font-weight: bold;
+        }
+
+}
+
+#para{
+    max-width: 70vw;
+    margin: 10vw;
+    margin-left: 20vw;
+    margin-top: 5vw;
+    font-size: 20px;
+    grid-area: text;
+    font-family: mainFont;
+}
+
+#startbutton{
+    margin-bottom: 10vw;
 }
