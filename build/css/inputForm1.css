@@ -322,6 +322,9 @@ button {
   height: 10vw;
   width: 30vw;
 }
+button:hover {
+  cursor: pointer;
+}
 
 #buttons {
   display: flex;
@@ -340,17 +343,34 @@ input {
   border: 3px solid red;
 }
 
-.text {
-  grid-area: text;
-  margin: 10vw;
+@media screen and (min-width: 1024px) {
+  .form {
+    height: 4vw;
+    margin-bottom: 2vw;
+    font-size: 2vw;
+    padding: 0.2vw;
+    width: 35vw;
+  }
+  button {
+    height: 5vw;
+    width: 15vw;
+  }
+  #buttons {
+    gap: 8vw;
+  }
+}
+#imgSec {
+  display: none;
 }
 
 main {
   grid-template-areas: "text text text text text" "inputform inputform inputform inputform inputform" "inputform inputform inputform inputform inputform" "inputform inputform inputform inputform inputform" "inputform inputform inputform inputform inputform";
 }
 
-p {
+#text {
   grid-area: text;
+  grid-area: text;
+  margin: 10vw;
 }
 
 #inForm1 {
@@ -360,6 +380,30 @@ p {
 
 #buttons {
   margin-bottom: 7vw;
+}
+
+@media screen and (min-width: 1024px) {
+  main {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto auto auto;
+    grid-template-areas: "text text img img" "inputform inputform img img" "inputform inputform img img" "inputform inputform img img" "inputform inputform img img";
+  }
+  #inForm1 {
+    grid-area: inputform;
+    margin-left: 5vw;
+  }
+  #imgSec {
+    min-width: 40vw;
+    min-height: auto;
+    display: block;
+    grid-area: img;
+    margin-top: 15vw;
+    margin-bottom: 15vw;
+  }
+  #text {
+    font-size: 40px;
+    margin: 5vw;
+  }
 }
 
 /*# sourceMappingURL=inputForm1.css.map */

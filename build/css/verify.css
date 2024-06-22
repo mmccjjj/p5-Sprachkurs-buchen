@@ -322,6 +322,9 @@ button {
   height: 10vw;
   width: 30vw;
 }
+button:hover {
+  cursor: pointer;
+}
 
 #buttons {
   display: flex;
@@ -340,11 +343,22 @@ input {
   border: 3px solid red;
 }
 
-.text {
-  grid-area: text;
-  margin: 10vw;
+@media screen and (min-width: 1024px) {
+  .form {
+    height: 4vw;
+    margin-bottom: 2vw;
+    font-size: 2vw;
+    padding: 0.2vw;
+    width: 35vw;
+  }
+  button {
+    height: 5vw;
+    width: 15vw;
+  }
+  #buttons {
+    gap: 8vw;
+  }
 }
-
 main {
   grid-template-areas: ". . . . ." ". . . . ." "text text text text text" "text text text text text" ". buttons buttons buttons .";
 }

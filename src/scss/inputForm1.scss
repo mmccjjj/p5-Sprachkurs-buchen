@@ -1,6 +1,10 @@
 @use "style";
 @import"abstract/colors";
 
+#imgSec{
+    display: none;
+}
+
 main{
     grid-template-areas: 
     "text text text text text"
@@ -12,8 +16,10 @@ main{
 
 }
 
-p{
+#text{
     grid-area: text;
+    grid-area: text;
+    margin: 10vw;
 }
 
 
@@ -27,4 +33,40 @@ p{
 }
 
 
+
+@media screen and (min-width: 1024px){
+    main{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: auto auto auto auto auto;
+        grid-template-areas: 
+            "text text img img"
+            "inputform inputform img img"
+            "inputform inputform img img"
+            "inputform inputform img img"
+            "inputform inputform img img";
+        
+        
+        
+    }
+
+    #inForm1{
+        grid-area: inputform;
+        margin-left: 5vw;
+    }
+
+    #imgSec{
+        min-width: 40vw;
+        min-height: auto;
+        display: block;
+        grid-area: img;
+        margin-top: 15vw;
+        margin-bottom: 15vw;
+    }
+
+    #text{
+        font-size: 40px;
+        margin: 5vw;
+    }
+
+}
 
