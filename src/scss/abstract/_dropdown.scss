@@ -6,7 +6,6 @@
     gap: 0.5rem;
     align-items: center;
     justify-content: center;
-    width: fit-content;
     margin-bottom: 4vh;
 }
 
@@ -23,9 +22,26 @@
     background-color: $textColor;
     font-size: 5vw;
     border-radius: 10px;
+
+        &:hover{
+            cursor: pointer;
+        }
 }
 
 .dropDownItem:focus{
     outline: none;
 }
 
+@media screen and (min-width: 1024px){
+    .dropDownItem{
+        width: 20vw;
+        height: 6vh;
+        font-size: 2vw;
+
+    }
+
+    #allDropDown{
+        flex-direction: row ;
+        flex-wrap: wrap;
+    }
+}
