@@ -1,8 +1,14 @@
 @use "style";
 @import"abstract/colors";
 
+#imgMain{
+    display: none;
+}
+
 main{
-    grid-template-areas: 
+    grid-template-areas:
+    "title title title title title"
+    "text text text text text" 
     ". allDropDown allDropDown allDropDown ."
     ". . . . ."
     ". startbutton startbutton startbutton .";
@@ -15,10 +21,104 @@ width: 25vw;
 height: fit-content;
 font-size: 8vw;
 justify-self: center;
+margin-bottom: 10vw;
+
+&:hover{
+   cursor: pointer;
 }
+}
+
 
 #allDropDown{
     grid-area: allDropDown;
     justify-self: center;
 
+}
+
+#title{
+    margin: 10vw;
+    margin-left: 15vw;
+    margin-bottom: 5vw;
+    grid-area: title;
+        #span1{
+            font-size: 50px;
+            font-weight: bold;
+        }
+
+        #span2{
+            font-size: 35px;
+            font-weight: bold;
+        }
+
+        #span3{
+            font-size: 40px;
+            font-weight: bold;
+        }
+
+}
+
+#para{
+    margin: 10vw;
+    margin-left: 20vw;
+    margin-top: 5vw;
+    grid-area: text;
+}
+
+
+@media screen and (min-width: 1024px){
+
+main{
+    grid-template-areas:
+    "title title title img img"
+    "text text text img img" 
+    "text text text img img"
+    "allDropDown allDropDown allDropDown img img"
+    "startbutton startbutton startbutton img img";
+
+}
+
+#imgMain{
+    min-width: 40vw;
+    display: block;
+    grid-area: img;
+    border-radius: 20% 0 0 20%;
+    margin-top: 2vw;
+    margin-bottom: 2vw;
+}
+
+#allDropDown{
+    display: flex;
+}
+
+#title{
+    font-size: 50px;
+    margin-left: 10vw;
+    margin-bottom: 5vw;
+        #span1{
+            font-size: 80px;
+            font-weight: bold;
+        }
+
+        #span2{
+            font-size: 50px;
+            font-weight: bold;
+        }
+
+        #span3{
+            font-size: 60px;
+            font-weight: bold;
+        }
+
+}
+
+#para{
+    font-size: 40px;
+    margin-left: 10vw;
+    margin-top: 2vw;
+    margin-bottom: 5vw;
+}
+
+#startbutton{
+    margin-bottom: 3vw;
+}
 }

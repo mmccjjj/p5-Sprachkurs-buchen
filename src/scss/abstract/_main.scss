@@ -14,10 +14,20 @@ html{
 }
 
 main{
+    min-height: 70vh;
     display: grid;
     justify-content: center;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: auto auto auto;
+    grid-template-rows: auto auto auto auto auto;
+}
+
+
+.text{
+    font-size: 25px;
+}
+
+.font{
+    font-family: mainFont;
 }
 
 button{
@@ -42,11 +52,6 @@ button{
 .hideActiv{
     display: none;
 }
-
-.wrong {
-    border: 1px solid red;
-}
-
 
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,

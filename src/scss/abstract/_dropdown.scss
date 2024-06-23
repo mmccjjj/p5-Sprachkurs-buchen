@@ -6,7 +6,7 @@
     gap: 0.5rem;
     align-items: center;
     justify-content: center;
-    width: fit-content;
+    margin-bottom: 4vh;
 }
 
 
@@ -16,15 +16,32 @@
     border-color: $mainColor;
     border: solid;
     appearance: none;
-    /* padding: 0 30px 0 15px; */
-    width: 30vw;
+    width: 55vw;
+    height: 6vh;
     color: $mainColor;
     background-color: $textColor;
     font-size: 5vw;
     border-radius: 10px;
+
+        &:hover{
+            cursor: pointer;
+        }
 }
 
 .dropDownItem:focus{
     outline: none;
 }
 
+@media screen and (min-width: 1024px){
+    .dropDownItem{
+        width: 20vw;
+        height: 6vh;
+        font-size: 2vw;
+
+    }
+
+    #allDropDown{
+        flex-direction: row ;
+        flex-wrap: wrap;
+    }
+}

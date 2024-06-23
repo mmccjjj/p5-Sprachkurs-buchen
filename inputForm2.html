@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/build/css/inputForm2.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/fav/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/fav/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/fav/favicon-16x16.png">
+    <link rel="manifest" href="/img/fav/site.webmanifest">
     <title>inputForm2</title>
 </head>
 <body>
@@ -19,6 +23,15 @@
             </div>
     
             <nav>
+
+                <a href="/index.html"><img src="/img/logo.PNG" alt="Logo"></a>
+    
+                <div id="navDesk">
+                    <a href="/index.html">Home</a>
+                    <a href="/faq.html">FAQ</a>
+                    <a href="/about.html">About</a>
+                </div>
+    
                 <div class="hamburgerMenu">
                     <span></span>
                     <span></span>
@@ -27,47 +40,55 @@
             </nav>
     
     
+    
         </header>
     
         <main>
-            <p id="test"></p>
-
-
+            
             <form id="inForm2">
-                <label for="name">Name</label>
-                <input type="text" name="name" id="name" required>
-
-                <label for="adress">Adress</label>
-                <input type="text" name="adress" id="adress" required>
-
-                <label for="zip">Zip</label>
-                <input type="number" name="zip" id="zip"required >
-
-                <label for="city">City</label>
-                <input type="text" name="city" id="city"required>
-
+                <div>
+                <label for="name">Name</label><br>
+                <input class="form" type="text" name="name" id="name" >
+                </div>
+                <div>
+                <label for="adress">Adress</label><br>
+                <input class="form" type="text" name="adress" id="adress" required>
+                </div>
+                <div>
+                <label for="zip">Zip</label><br>
+                <input class="form" type="number" name="zip" id="zip"required >
+                </div>
+                <div>
+                <label for="city">City</label><br>
+                <input class="form" type="text" name="city" id="city"required>
+                </div>
+                <div id="buttons">
                 <button type="button" class="buNeg" id="backButton">Back</button>
                 <button type="button" class="buPos" id="nextButton">Next</button>
-
+                </div>
 
             </form>
 
             <div id="myModal" class="modal">
                 <div class="modal-content">
                   <span class="close">&times;</span>
-                  <p>You have not filled out at least one field correctly. Please note the following points:</p>
-                  <br>
-                  <ul>
-                    <li>Username must be at least three characters long.</li>
-                    <li>Valid email address required.</li>
-                    <li>Password must be at least six characters long.</li>
+                  <p>Please provide your full name and a valid address.</p>
+            
                   </ul>
                 </div>
             </div>
+
+            <img id="imgThi" src="/img/Desktop3.png" alt="">
         
         </main>
     
         <footer>
+            <div id="adress">
+                <p>GlobalLingo Academy</p>
+                <p>123 Language Lane</p>
+                <p>Linguaville, LX 45678</p>
+            </div>
+            <a href="https://www.instagram.com/?hl=de" target="_blank"><img src="/img/instaicon.png" alt=""></a>
     
         </footer>
     

@@ -1,0 +1,59 @@
+@import "colors";
+
+.form{
+    height: 6vw;
+    width: 60vw;
+    margin-bottom: 5vw;
+    font-size: 5vw;
+    padding: 1.5vw;
+}
+
+button{
+    height: 10vw;
+    width: 30vw;
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+
+#buttons{
+    display: flex;
+    justify-content: center;
+    gap: 2vw;
+    margin-top: 5vw;
+
+}
+
+input{
+    border-style: none;
+    background-color: $inputcolor;
+    border-radius: 5px;
+}
+
+.wrong {
+    border: 3px solid red;
+}
+
+@media screen and (min-width: 1024px){
+
+    .form{
+        height: 4vw;
+        margin-bottom: 2vw;
+        font-size: 2vw;
+        padding: 0.2vw;
+        width: 35vw;
+        
+    }
+
+    button{
+        height: 5vw;
+        width: 15vw;
+        font-size: 25px;
+    }
+
+    #buttons{
+        gap: 8vw;
+    }
+
+}

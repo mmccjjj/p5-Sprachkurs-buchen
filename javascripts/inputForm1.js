@@ -119,6 +119,7 @@ inRePassword.addEventListener("input", checkPassword);
 
 
 function backButtonFunction() {
+    localStorage.clear();
     window.history.back();
 }
 

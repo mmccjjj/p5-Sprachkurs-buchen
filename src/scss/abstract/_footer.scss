@@ -1,0 +1,39 @@
+@import "colors";
+
+footer{
+    display: flex;
+    flex-direction: column;
+    background-color: $mainColor;
+    color: $textColor;
+    min-height: 20vh;
+    justify-content: space-around;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+
+        #adress{
+            position: relative;
+            top: 1vh;
+        }
+
+        img{
+            max-width: 45px;
+            max-height: auto;
+        }
+}   
+
+
+@media screen and (min-width: 1024px){
+    footer{
+        flex-direction: row-reverse;
+
+        #adress{
+            font-size: 1.5vw;
+        }
+        img{
+            max-width: 80px;
+            max-height: auto;
+        }
+}   
+    }
+ 
+

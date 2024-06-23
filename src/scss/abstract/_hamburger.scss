@@ -1,6 +1,18 @@
 @import "colors";
+/* #navDesk{
+    display: none;
+} */
+img{
+    max-width: 100px;
+    height: auto;
+    color: $textColor;
+}
 
 header{display: grid;}
+
+#navDesk{
+    display: none;
+}
 
 nav{
     padding: 1rem;
@@ -92,4 +104,48 @@ nav{
 
 .hamburgerOff.active{
     right: 0;
+}
+
+
+@media screen and (min-width: 1024px){
+    .hamburgerOff{
+        display: none;
+    }
+
+    .hamburgerMenu{
+        span{
+            display: none;
+        }
+    }
+
+    nav{
+        display: flex;
+        height: 10vh;
+        #navDesk{
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            font-size: 2vw;
+            font-family: Arial, Helvetica, sans-serif;
+
+
+            a{
+                text-decoration: none;
+                color: $textColor;
+            }
+            a:hover {
+                cursor: pointer;
+              }
+        }
+
+        img{
+         
+            max-width: 150px;
+           
+        }
+
+        
+        
+    }
 }

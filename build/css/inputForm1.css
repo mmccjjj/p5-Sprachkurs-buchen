@@ -4,7 +4,7 @@
   gap: 0.5rem;
   align-items: center;
   justify-content: center;
-  width: fit-content;
+  margin-bottom: 4vh;
 }
 
 .dropDownItem {
@@ -12,20 +12,47 @@
   border-color: #81D9F5;
   border: solid;
   appearance: none;
-  /* padding: 0 30px 0 15px; */
-  width: 30vw;
+  width: 55vw;
+  height: 6vh;
   color: #81D9F5;
   background-color: white;
   font-size: 5vw;
   border-radius: 10px;
+}
+.dropDownItem:hover {
+  cursor: pointer;
 }
 
 .dropDownItem:focus {
   outline: none;
 }
 
+@media screen and (min-width: 1024px) {
+  .dropDownItem {
+    width: 20vw;
+    height: 6vh;
+    font-size: 2vw;
+  }
+  #allDropDown {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+/* #navDesk{
+    display: none;
+} */
+img {
+  max-width: 100px;
+  height: auto;
+  color: white;
+}
+
 header {
   display: grid;
+}
+
+#navDesk {
+  display: none;
 }
 
 nav {
@@ -101,6 +128,36 @@ nav {
   right: 0;
 }
 
+@media screen and (min-width: 1024px) {
+  .hamburgerOff {
+    display: none;
+  }
+  .hamburgerMenu span {
+    display: none;
+  }
+  nav {
+    display: flex;
+    height: 10vh;
+  }
+  nav #navDesk {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 2vw;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  nav #navDesk a {
+    text-decoration: none;
+    color: white;
+  }
+  nav #navDesk a:hover {
+    cursor: pointer;
+  }
+  nav img {
+    max-width: 150px;
+  }
+}
 * {
   padding: 0px;
   margin: 0px;
@@ -115,10 +172,19 @@ html {
 }
 
 main {
+  min-height: 70vh;
   display: grid;
   justify-content: center;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: auto auto auto;
+  grid-template-rows: auto auto auto auto auto;
+}
+
+.text {
+  font-size: 25px;
+}
+
+.font {
+  font-family: mainFont;
 }
 
 button {
@@ -142,10 +208,6 @@ button {
 
 .hideActiv {
   display: none;
-}
-
-.wrong {
-  border: 1px solid red;
 }
 
 /* Chrome, Safari, Edge, Opera */
@@ -205,14 +267,70 @@ input[type=number] {
   cursor: pointer;
 }
 
-main {
-  height: 100vh;
-  grid-template-rows: auto auto auto auto auto;
-  grid-template-areas: "text text text text text" "inputform inputform inputform inputform inputform";
+footer {
+  display: flex;
+  flex-direction: column;
+  background-color: #81D9F5;
+  color: white;
+  min-height: 20vh;
+  justify-content: space-around;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+footer #adress {
+  position: relative;
+  top: 1vh;
+}
+footer img {
+  max-width: 45px;
+  max-height: auto;
 }
 
-p {
-  grid-area: text;
+@media screen and (min-width: 1024px) {
+  footer {
+    flex-direction: row-reverse;
+  }
+  footer #adress {
+    font-size: 1.5vw;
+  }
+  footer img {
+    max-width: 80px;
+    max-height: auto;
+  }
+}
+@font-face {
+  font-family: "mainFont";
+  src: url(/fonts/JosefinSlab-VariableFont_wght.ttf) format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: "mainFontIt";
+  src: url(/fonts/JosefinSlab-Italic-VariableFont_wght.ttf) format("woff2");
+  font-weight: 100 900;
+  font-style: italic;
+}
+.form {
+  height: 6vw;
+  width: 60vw;
+  margin-bottom: 5vw;
+  font-size: 5vw;
+  padding: 1.5vw;
+}
+
+button {
+  height: 10vw;
+  width: 30vw;
+}
+button:hover {
+  cursor: pointer;
+}
+
+#buttons {
+  display: flex;
+  justify-content: center;
+  gap: 2vw;
+  margin-top: 5vw;
 }
 
 input {
@@ -221,14 +339,72 @@ input {
   border-radius: 5px;
 }
 
+.wrong {
+  border: 3px solid red;
+}
+
+@media screen and (min-width: 1024px) {
+  .form {
+    height: 4vw;
+    margin-bottom: 2vw;
+    font-size: 2vw;
+    padding: 0.2vw;
+    width: 35vw;
+  }
+  button {
+    height: 5vw;
+    width: 15vw;
+    font-size: 25px;
+  }
+  #buttons {
+    gap: 8vw;
+  }
+}
+main {
+  grid-template-areas: "text text text text text" "inputform inputform inputform inputform inputform" "inputform inputform inputform inputform inputform" "inputform inputform inputform inputform inputform" "inputform inputform inputform inputform inputform";
+}
+
+#imgSec {
+  display: none;
+}
+
+#text {
+  grid-area: text;
+  grid-area: text;
+  margin: 10vw;
+}
+
 #inForm1 {
   grid-area: inputform;
   justify-self: center;
 }
 
 #buttons {
-  display: flex;
-  justify-content: center;
+  margin-bottom: 7vw;
+}
+
+@media screen and (min-width: 1024px) {
+  main {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto auto auto;
+    grid-template-areas: "text text img img" "inputform inputform img img" "inputform inputform img img" "inputform inputform img img" "inputform inputform img img";
+  }
+  #inForm1 {
+    grid-area: inputform;
+    margin-left: 5vw;
+  }
+  #imgSec {
+    min-width: 40vw;
+    min-height: auto;
+    display: block;
+    grid-area: img;
+    margin-top: 15vw;
+    margin-bottom: 15vw;
+  }
+  #text {
+    font-size: 40px;
+    margin: 5vw;
+  }
 }
 
 /*# sourceMappingURL=inputForm1.css.map */

@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="build/css/verify.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/fav/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/fav/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/fav/favicon-16x16.png">
+    <link rel="manifest" href="/img/fav/site.webmanifest">
     <title>verify</title>
 </head>
 <body>
@@ -17,6 +21,15 @@
         </div>
 
         <nav>
+
+            <a href="/index.html"><img src="/img/logo.PNG" alt="Logo"></a>
+
+            <div id="navDesk">
+                <a href="/index.html">Home</a>
+                <a href="/faq.html">FAQ</a>
+                <a href="/about.html">About</a>
+            </div>
+
             <div class="hamburgerMenu">
                 <span></span>
                 <span></span>
@@ -24,28 +37,37 @@
             </div>
         </nav>
 
+
     </header>
 
     <main>
-        <h1 id="thx">Thank you for your booking</h1>
+        <h1 id="thx" class="font">Thank you for your booking</h1>
         <div id="text">
-        <p id="title">Your course:</p>
-        <p id="courseOutput"></p>
-        <p id="dateOutput"></p><br><br>
-        <p class="textForm" id="usernameOutput"></p>
-        <p class="textForm" id="emailOutput"></p><br><br><br>
-        <p class="textForm" id="nameOutput"></p>
-        <p class="textForm" id="adressOutput"></p>
-        <p class="textForm" id="zipOutput"></p>
-        <p class="textForm" id="cityOutput"></p>
+        <p id="title" class="font">Your course:</p>
+        <p id="courseOutput" class="font"></p>
+        <p id="dateOutput" class="font"></p><br><br>
+        <p class="textForm font" id="usernameOutput"></p>
+        <p class="textForm font" id="emailOutput"></p><br><br><br>
+        <p class="textForm font" id="nameOutput"></p>
+        <p class="textForm font" id="adressOutput"></p>
+        <p class="textForm font" id="zipOutput"></p>
+        <p class="textForm font" id="cityOutput"></p>
         </div>
-
+        <div id="buttons">
         <button type="button" class="buNeg" id="cancelButton">Cancel</button>
         <button type="button" class="buPos" id="confirmButton">Confirm</button>
+        </div>
 
+        <img id="imgCon" src="/img/confirm.png" alt="">
     </main>
 
     <footer>
+        <div id="adress">
+            <p >GlobalLingo Academy</p>
+            <p>123 Language Lane</p>
+            <p>Linguaville, LX 45678</p>
+        </div>
+        <img src="/img/instaicon.png" alt="">
 
     </footer>
   

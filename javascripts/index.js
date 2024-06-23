@@ -1,10 +1,19 @@
-document.addEventListener("DOMContentLoaded", function() {
+
   let languages = document.getElementById("languages");
   let level = document.getElementById("level");
   let date = document.getElementById("date");
   let time = document.getElementById("time");
   let startButton = document.getElementById("startbutton");
-  let preventStorageClear = false;
+
+  window.addEventListener('pageshow', function(event) {
+    var historyTraversal = event.persisted || 
+                           (typeof window.performance != 'undefined' && 
+                                window.performance.navigation.type === 2);
+    if (historyTraversal) {
+      
+      window.location.reload(true);
+    }
+  });
   
   let optionsData = {
   "english": {
@@ -26,18 +35,33 @@ document.addEventListener("DOMContentLoaded", function() {
 
   function capitalizeWordsInLocalStorage(keys) {
     keys.forEach(key => {
-        let value = localStorage.getItem(key); // Wert aus localStorage holen
+        let value = localStorage.getItem(key);
         if (value) {
-            // Wörter im Wert umformatieren (jedes Wort beginnt mit einem Großbuchstaben)
+            
             let formattedValue = value.split(' ').map(word => {
                 return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
             }).join(' ');
 
-            // Formatierter Wert zurück in localStorage speichern
             localStorage.setItem(key, formattedValue);
         }
     });
 }
+
+function updateDateDropdown(selectedLanguage, selectedLevel, selectedDate) {
+  date.innerHTML = "";
+  date.add(new Option("Date", "", true, true));
+  date.options[0].disabled = true;
+  
+
+  optionsData[selectedLanguage][selectedLevel].date.forEach(function(option) {
+    date.add(new Option(option, option));
+  });
+  
+  if (selectedDate) {
+    date.value = selectedDate;
+  }
+  }
+
 
   function updateTimeDropdown(selectedLanguage, selectedLevel, selectedTime) {
     time.innerHTML = "";
@@ -64,12 +88,7 @@ document.addEventListener("DOMContentLoaded", function() {
       updateTimeDropdown(selectedValueLanguages, selectedValueLevel);
     }
     }
-    window.addEventListener("beforeunload", function(event) {
-    if (!preventStorageClear) {
-    localStorage.clear();
-   
-    }
-    });
+
 
   
   
@@ -77,36 +96,6 @@ document.addEventListener("DOMContentLoaded", function() {
   level.addEventListener("change", updateOptions);
   
 
-  
-  // Funktion zum Laden der Optionen basierend auf gespeicherten Daten
-  function loadOptionsFromStorage() {
-  let storedLanguage = localStorage.getItem("language");
-  let storedLevel = localStorage.getItem("level");
-  let storedDate = localStorage.getItem("date");
-  let storedTime = localStorage.getItem("time");
-  
-
-  // Setze die gespeicherten Werte in die Dropdowns
-  if (storedLanguage && storedLevel && storedDate && storedTime &&
-      optionsData[storedLanguage] && optionsData[storedLanguage][storedLevel]) {
-    // Sprache setzen
-    languages.value = storedLanguage;
-  
-    // Level setzen
-    level.value = storedLevel;
-  
-    // Datum-Optionen aktualisieren
-    updateDateDropdown(storedLanguage, storedLevel, storedDate);
-  
-    // Zeit-Optionen aktualisieren
-    updateTimeDropdown(storedLanguage, storedLevel, storedTime);
-  }
-  }
-  
-  // Lade die Optionen beim Laden der Seite
-  loadOptionsFromStorage();
-  
-  // Funktion zum Speichern der Daten im LocalStorage
   function startButtonFunction(){
   localStorage.setItem("language", languages.value);
   localStorage.setItem("level", level.value);
@@ -117,27 +106,10 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   startButton.addEventListener("click", function() {
-    preventStorageClear = true;
     startButtonFunction();
     window.location.href = "inputForm1.html";
     });
   
-  // Funktion zum Aktualisieren der Dropdown-Optionen für Datum
-  function updateDateDropdown(selectedLanguage, selectedLevel, selectedDate) {
-  date.innerHTML = "";
-  date.add(new Option("Date", "", true, true));
-  date.options[0].disabled = true;
-  
 
-  optionsData[selectedLanguage][selectedLevel].date.forEach(function(option) {
-    date.add(new Option(option, option));
-  });
-  
-  if (selectedDate) {
-    date.value = selectedDate;
-  }
-  }
-  
-  });
 
   

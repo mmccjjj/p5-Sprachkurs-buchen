@@ -1,2 +1,33 @@
 @use "style";
 @import"abstract/colors";
+
+main{
+grid-template-areas:
+"faq faq faq faq faq"
+"faq faq faq faq faq"
+"faq faq faq faq faq"
+"faq faq faq faq faq"
+"faq faq faq faq faq";
+padding: 5vw;
+}
+
+
+#faq{
+    grid-area: faq;
+}
+
+@media screen and (min-width: 1024px){
+    h1{
+        font-size: 50px;
+    }
+
+    h3{
+        font-size: 30px;
+    }
+
+    .text{
+        font-size: 25px;
+        margin-bottom: 2vw;
+    }
+
+}
