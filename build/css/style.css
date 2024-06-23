@@ -354,6 +354,7 @@ input {
   button {
     height: 5vw;
     width: 15vw;
+    font-size: 25px;
   }
   #buttons {
     gap: 8vw;

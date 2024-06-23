@@ -354,17 +354,18 @@ input {
   button {
     height: 5vw;
     width: 15vw;
+    font-size: 25px;
   }
   #buttons {
     gap: 8vw;
   }
 }
-#imgSec {
-  display: none;
-}
-
 main {
   grid-template-areas: "text text text text text" "inputform inputform inputform inputform inputform" "inputform inputform inputform inputform inputform" "inputform inputform inputform inputform inputform" "inputform inputform inputform inputform inputform";
+}
+
+#imgSec {
+  display: none;
 }
 
 #text {

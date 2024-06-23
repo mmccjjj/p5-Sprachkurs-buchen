@@ -10,9 +10,47 @@ main{
     "inputform inputform inputform inputform inputform";
 }
 
+#imgThi{
+
+    display: none;
+}
+
 
 
 #inForm2{
     grid-area: inputform;
     justify-self: center;
+}
+
+
+@media screen and (min-width: 1024px){
+
+    main{
+        padding: 3vw;
+        padding-right: 0px;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas: 
+        "inputform inputform . ."
+        "inputform inputform img img"
+        "inputform inputform img img"
+        "inputform inputform img img"
+        "inputform inputform img img";
+    }
+
+    #imgThi{
+        grid-area: img;
+        min-width: 60vw;
+
+    }
+
+    #inForm2{
+        margin-left: 100px;
+        margin-top: 100px;
+    }
+    #buttons{
+        margin-top: 1vw;
+        gap: 5vw;
+        
+    }
+
 }

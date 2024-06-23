@@ -1,10 +1,6 @@
 @use "style";
 @import"abstract/colors";
 
-#imgSec{
-    display: none;
-}
-
 main{
     grid-template-areas: 
     "text text text text text"
@@ -15,6 +11,11 @@ main{
 
 
 }
+
+#imgSec{
+    display: none;
+}
+
 
 #text{
     grid-area: text;

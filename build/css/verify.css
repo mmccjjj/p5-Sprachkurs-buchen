@@ -354,6 +354,7 @@ input {
   button {
     height: 5vw;
     width: 15vw;
+    font-size: 25px;
   }
   #buttons {
     gap: 8vw;
@@ -361,6 +362,10 @@ input {
 }
 main {
   grid-template-areas: ". . . . ." ". . . . ." "text text text text text" "text text text text text" ". buttons buttons buttons .";
+}
+
+#imgCon {
+  display: none;
 }
 
 #text {
@@ -394,6 +399,40 @@ main {
 
 .textForm {
   font-size: 5vw;
+}
+
+@media screen and (min-width: 1024px) {
+  main {
+    padding-bottom: 2vw;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: "text text img img" "text text img img" "buttons buttons img img" "buttons buttons img img" "buttons buttons img img";
+  }
+  #imgCon {
+    grid-area: img;
+    min-width: 40vw;
+  }
+  #courseOutput {
+    font-size: 4vw;
+  }
+  .textForm {
+    font-size: 2vw;
+  }
+  #text {
+    margin-top: 10vw;
+  }
+  #thx {
+    font-size: 50px;
+  }
+  #buttons {
+    flex-direction: column-reverse;
+    gap: 1vw;
+    margin: 0px;
+    align-items: center;
+  }
+  #buttons #confirmButton {
+    width: 20vw;
+    height: 8vw;
+  }
 }
 
 /*# sourceMappingURL=verify.css.map */

@@ -354,6 +354,7 @@ input {
   button {
     height: 5vw;
     width: 15vw;
+    font-size: 25px;
   }
   #buttons {
     gap: 8vw;
@@ -361,10 +362,17 @@ input {
 }
 main {
   grid-template-areas: "about about about about about";
+  padding: 10vw;
 }
 
 p {
   grid-area: about;
+}
+
+@media screen and (min-width: 1024px) {
+  .text {
+    font-size: 40px;
+  }
 }
 
 /*# sourceMappingURL=about.css.map */
