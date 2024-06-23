@@ -381,6 +381,7 @@ main {
     grid-template-areas: "inputform inputform . ." "inputform inputform img img" "inputform inputform img img" "inputform inputform img img" "inputform inputform img img";
   }
   #imgThi {
+    display: block;
     grid-area: img;
     min-width: 60vw;
   }

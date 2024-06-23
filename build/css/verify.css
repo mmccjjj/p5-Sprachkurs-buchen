@@ -408,6 +408,7 @@ main {
     grid-template-areas: "text text img img" "text text img img" "buttons buttons img img" "buttons buttons img img" "buttons buttons img img";
   }
   #imgCon {
+    display: block;
     grid-area: img;
     min-width: 40vw;
   }
@@ -422,6 +423,7 @@ main {
   }
   #thx {
     font-size: 50px;
+    margin-top: 10em;
   }
   #buttons {
     flex-direction: column-reverse;

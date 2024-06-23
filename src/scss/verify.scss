@@ -65,6 +65,7 @@ main{
     }
 
     #imgCon{
+        display: block;
         grid-area: img;
         min-width: 40vw;
     }
@@ -84,6 +85,7 @@ main{
 
     #thx{
         font-size: 50px;
+        margin-top: 10em;
     }
 
     #buttons{
